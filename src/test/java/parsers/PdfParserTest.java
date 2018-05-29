@@ -14,7 +14,6 @@ public class PdfParserTest
 	private PdfParser pdfparser;
 	private final static String PDF_FILE = "src\\test\\resources\\" + "solr-word.pdf";
 	private final static String PDF_2_PAGES_FILE = "src\\test\\resources\\" + "pdf-2-paginas.pdf";
-	private final static String PDF_MULTIPLE_PAGES_FILE = "src\\test\\resources\\" + "EDAI.pdf";
 	
 	@Before
 	public void initialize()
@@ -50,24 +49,5 @@ public class PdfParserTest
 			assertTrue(result.get(2).contains("Línea " + i));
 		}
 		assertTrue(result.get(2).contains("Final de la página 2"));
-	}
-	
-	@Test
-	public void pdfMultiplePagesTest() {
-		result = pdfparser.parse(PDF_MULTIPLE_PAGES_FILE);
-		
-		assertEquals(112, result.size());
-		
-		assertTrue(result.get(3).contains("Índice"));
-		assertTrue(result.get(4).contains("Capítulo"));
-		assertTrue(result.get(15).contains("@Test"));
-		assertTrue(result.get(17).contains("CreateArrayInt"));
-		assertTrue(result.get(37).contains("SizeTest"));
-		assertTrue(result.get(47).contains("Programa Principal"));
-		assertTrue(result.get(57).contains("equilibrado"));
-		assertTrue(result.get(65).contains("Cuenta bancaria"));
-		assertTrue(result.get(85).contains("private"));
-		assertTrue(result.get(111).contains("Linked Data"));
-		assertTrue(result.get(112).contains("Enlace web"));
 	}
 }

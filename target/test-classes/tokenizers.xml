@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tokenizers-definition [
+	<!ELEMENT tokenizers-definition (tokenizers)>
+	<!ELEMENT tokenizers (class+)>
+	<!ELEMENT class (#PCDATA)>
+]>
+<tokenizers-definition>
+	<tokenizers>
+		<class>WhiteSpaceTokenizer</class>
+		<class>PunctuationMarksTokenizer</class>
+		<class>FullSymbolTokenizer</class>
+	</tokenizers>
+</tokenizers-definition>
